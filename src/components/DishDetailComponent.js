@@ -9,13 +9,13 @@ class DishDetail extends Component {
                 <Card>
                     <CardImg top src={dish.image} alt={dish.name} />
                     <CardBody>
-                      <CardTitle>{dish.name}</CardTitle>
-                      <CardText>{dish.description}</CardText>
+                        <CardTitle>{dish.name}</CardTitle>
+                        <CardText>{dish.description}</CardText>
                     </CardBody>
                 </Card>
             );
         else
-            return(
+            return (
                 <div></div>
             );
     }
@@ -23,7 +23,7 @@ class DishDetail extends Component {
     renderComments(comments) {
         const commentMap = comments.map((comment) => {
             var d = new Date(comment.date)
-            var options = {month: "short", day: "numeric", year: "numeric"}
+            var options = { month: "short", day: "numeric", year: "numeric" }
             return (
                 <div key={comments.id} className="col-12 border-0 m-0">
                     <li className="list-group-item border-0 m-1 p-1">"{comment.comment}"</li>
@@ -47,14 +47,16 @@ class DishDetail extends Component {
     }
 
     render() {
-        if (this.props.selectedDish != null)
+        if (this.props.dish != null)
             return (
-                <div className="row">
-                    <div  className="col-12 col-md-5 m-1">
-                        {this.renderDish(this.props.selectedDish)}
-                    </div>
-                    <div  className="col-12 col-md-5 m-1">
-                        {this.renderComments(this.props.selectedDish.comments)}
+                <div key={this.props.dish} className="container">
+                    <div className="row">
+                        <div className="col-12 col-md-5 m-1">
+                            {this.renderDish(this.props.dish)}
+                        </div>
+                        <div className="col-12 col-md-5 m-1">
+                            {this.renderComments(this.props.dish.comments)}
+                        </div>
                     </div>
                 </div>
             );
