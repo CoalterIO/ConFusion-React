@@ -56,7 +56,7 @@ function RenderComments({ comments }) {
                         return (
                             <li key={comment.id}>
                                 <p>{comment.comment}</p>
-                                <p>--{comment.author}, {new Date(comment.date).toLocaleDateString("en-US", options)}</p>
+                                <p> -- {comment.author}, {new Date(comment.date).toLocaleDateString("en-US", options)}</p>
                             </li>
                         );
                     })}
