@@ -1,29 +1,44 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
-
-function RenderLeader({ leader }) {
-    return (
-        <Media tag="li">
-            <Media object src={leader.image} className="padded-top"/>
-            <Media body className="padded-left">
-                <Media heading>
-                    {leader.name}
-                </Media>
-                <p>{leader.designation}</p>
-                <p>{leader.description}</p>
-            </Media>
-        </Media>
-    )
-}
+import { Loading } from "./LoadingComponent";
+import { Fade, Stagger } from "react-animation-components";
+import { baseUrl } from '../shared/baseUrl';
 
 function About(props) {
 
-    const leaders = props.leaders.map((leader) => {
+    function RenderLeader({ leader }) {
         return (
-            <RenderLeader leader={leader} />
-        );
-    });
+            <Media tag="li">
+                <Media object src={baseUrl + leader.image} className="padded-top" />
+                <Media body className="padded-left">
+                    <Media heading>
+                        {leader.name}
+                    </Media>
+                    <p>{leader.designation}</p>
+                    <p>{leader.description}</p>
+                </Media>
+            </Media>
+        )
+    }
+
+    function RenderContent({ leaders, isLoading, errMess }) {
+        if (isLoading) {
+            return <Loading />;
+        } else if (errMess) {
+            return <h4>{errMess}</h4>;
+        } else
+            return (
+                <Stagger in>
+                    {leaders.leaders.map(leader => (
+                        <Fade in key={leader.id}>
+                            <RenderLeader key={leader.id} leader={leader} />
+                        </Fade>
+                    ))}
+                </Stagger>
+            );
+    }
+
 
     return (
         <div className="container">
@@ -80,9 +95,11 @@ function About(props) {
                     <h2>Corporate Leadership</h2>
                 </div>
                 <div className="col-12">
-                    <Media list>
-                        {leaders}
-                    </Media>
+                    <RenderContent
+                        leaders={props.leaders}
+                        isLoading={props.leadersLoading}
+                        errMess={props.leadersErrMess}
+                    />
                 </div>
             </div>
         </div>
