@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/ConFusion-React/static/css/main.6e8241c1.chunk.css",
+    "main.js": "/ConFusion-React/static/js/main.a71222d6.chunk.js",
+    "main.js.map": "/ConFusion-React/static/js/main.a71222d6.chunk.js.map",
+    "runtime-main.js": "/ConFusion-React/static/js/runtime-main.2fc7ab13.js",
+    "runtime-main.js.map": "/ConFusion-React/static/js/runtime-main.2fc7ab13.js.map",
+    "static/css/2.4c3127f8.chunk.css": "/ConFusion-React/static/css/2.4c3127f8.chunk.css",
+    "static/js/2.581715fc.chunk.js": "/ConFusion-React/static/js/2.581715fc.chunk.js",
+    "static/js/2.581715fc.chunk.js.map": "/ConFusion-React/static/js/2.581715fc.chunk.js.map",
+    "static/js/3.3e2a4f2b.chunk.js": "/ConFusion-React/static/js/3.3e2a4f2b.chunk.js",
+    "static/js/3.3e2a4f2b.chunk.js.map": "/ConFusion-React/static/js/3.3e2a4f2b.chunk.js.map",
+    "index.html": "/ConFusion-React/index.html",
+    "static/css/2.4c3127f8.chunk.css.map": "/ConFusion-React/static/css/2.4c3127f8.chunk.css.map",
+    "static/css/main.6e8241c1.chunk.css.map": "/ConFusion-React/static/css/main.6e8241c1.chunk.css.map",
+    "static/js/2.581715fc.chunk.js.LICENSE.txt": "/ConFusion-React/static/js/2.581715fc.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.css": "/ConFusion-React/static/media/fontawesome-webfont.f691f37e.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2fc7ab13.js",
+    "static/css/2.4c3127f8.chunk.css",
+    "static/js/2.581715fc.chunk.js",
+    "static/css/main.6e8241c1.chunk.css",
+    "static/js/main.a71222d6.chunk.js"
+  ]
+}
